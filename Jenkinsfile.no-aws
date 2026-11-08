@@ -1,0 +1,57 @@
+// Use this version ONLY if you do not have AWS access.
+// Rename it to "Jenkinsfile" (replace the other one), commit and push.
+// It runs build, test, terraform init and terraform validate. No AWS needed.
+
+pipeline {
+  agent any
+
+  stages {
+
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'node --version'
+        sh 'npm --version'
+        sh 'npm run build'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+
+    stage('Terraform Init') {
+      steps {
+        dir('terraform') {
+          sh 'terraform version'
+          sh 'terraform init -backend=false -input=false'
+        }
+      }
+    }
+
+    stage('Terraform Validate') {
+      steps {
+        dir('terraform') {
+          sh 'terraform fmt -check'
+          sh 'terraform validate'
+        }
+      }
+    }
+  }
+
+  post {
+    success {
+      echo 'Pipeline completed successfully'
+    }
+    failure {
+      echo 'Pipeline failed, check the console output'
+    }
+  }
+}

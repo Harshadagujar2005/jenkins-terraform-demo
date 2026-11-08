@@ -1,0 +1,12 @@
+{
+  "name": "jenkins-terraform-demo",
+  "version": "1.0.0",
+  "description": "Sample app for a Jenkins CI/CD pipeline with Terraform",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "node --check app.js",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,25 @@
+Jenkins console output, job jenkins-terraform-pipeline, build #1 (excerpt)
+
+Started by user Harshada Gahininath Gujar
+Obtained Jenkinsfile from git https://github.com/Harshadagujar2005/jenkins-terraform-demo.git
+Running on Jenkins in /var/lib/jenkins/workspace/jenkins-terraform-pipeline
+Cloning repository https://github.com/Harshadagujar2005/jenkins-terraform-demo.git
+... (Build, Test, Terraform Init and Terraform Validate stages) ...
+
+Terraform Plan stage:
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + instance_id = (known after apply)
+  + public_ip   = (known after apply)
+
+Saved the plan to: tfplan
+
+Approval stage:
+Apply the Terraform plan and create the EC2 instance?
+Approved by Harshada Gahininath Gujar
+
+Terraform Apply stage (end of output):
+public_ip = "15.207.100.165"
+Pipeline completed successfully
+Finished: SUCCESS

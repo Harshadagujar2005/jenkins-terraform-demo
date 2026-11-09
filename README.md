@@ -21,6 +21,10 @@ jenkins-terraform-demo/
 └── scripts/
     ├── install-tools.sh     installs Java, Git, Node, Jenkins, Terraform on Ubuntu
     └── push-to-github.sh    pushes this folder to your GitHub repo
+├── docs/
+│   ├── Activity2_Jenkins_Terraform_Report.pdf   submission report (also .docx)
+│   └── screenshots/     16 screenshots of the pipeline run
+└── logs/                validation output and Jenkins console excerpts
 ```
 
 ## Quick start
@@ -48,3 +52,16 @@ Destroy the EC2 instance after your demo to avoid charges:
 ```
 cd terraform && terraform destroy
 ```
+
+## Results and evidence
+
+- Jenkins job `jenkins-terraform-pipeline` pulls this repository, runs Build, Test and the Terraform stages, and build #1 finished with `Finished: SUCCESS`.
+- `terraform validate`: `Success! The configuration is valid.`
+- `terraform plan`: `Plan: 2 to add, 0 to change, 0 to destroy.`
+- After approval, Terraform Apply created the EC2 instance `jenkins-terraform-demo` in ap-south-1 (Mumbai).
+
+Full write-up: [docs/Activity2_Jenkins_Terraform_Report.pdf](docs/Activity2_Jenkins_Terraform_Report.pdf)
+Screenshots: [docs/screenshots/](docs/screenshots/)
+Logs: [logs/](logs/)
+
+AWS access keys are stored only in the Jenkins credential store (ID `aws-creds`) and are not part of this repository. Screenshots that showed a key ID have it hidden.

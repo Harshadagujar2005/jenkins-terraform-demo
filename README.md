@@ -22,7 +22,7 @@ jenkins-terraform-demo/
     ├── install-tools.sh     installs Java, Git, Node, Jenkins, Terraform on Ubuntu
     └── push-to-github.sh    pushes this folder to your GitHub repo
 ├── docs/
-│   ├── Activity2_Jenkins_Terraform_Report.pdf   submission report (also .docx)
+│   ├── Activity2_Jenkins_Terraform_Report.pdf   submission report 
 │   └── screenshots/     16 screenshots of the pipeline run
 └── logs/                validation output and Jenkins console excerpts
 ```
@@ -61,6 +61,7 @@ cd terraform && terraform destroy
 - After approval, Terraform Apply created the EC2 instance `jenkins-terraform-demo` in ap-south-1 (Mumbai).
 
 Full write-up: [docs/Activity2_Jenkins_Terraform_Report.pdf](docs/Activity2_Jenkins_Terraform_Report.pdf)
+Demo video: [Google Drive](https://drive.google.com/file/d/1yws64dU_p1YTXRY54Fz3O1W-gdbXgs0x/view?usp=sharing)
 Screenshots: [docs/screenshots/](docs/screenshots/)
 Logs: [logs/](logs/)
 
